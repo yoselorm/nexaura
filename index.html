@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html data-wf-page="667187163156a5df09557ed5">
+
+    
+<head>
+
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+        <title>Nexaura</title>
+
+        <link href="css/normalize.css" rel="stylesheet" type="text/css" />
+        <link href="css/layout.css" rel="stylesheet" type="text/css" />
+        <link href="css/style.css" rel="stylesheet" type="text/css" />
+
+
+        <link href="images/icon.png" rel="shortcut icon" type="image/x-icon" />
+        <link href="images/icon.png" rel="apple-touch-icon" />
+
+        <style>
+            /* Loading spinner styles */
+            .loading-spinner {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100px;
+                font-size: 14px;
+                color: #666;
+            }
+            
+            .spinner {
+                width: 30px;
+                height: 30px;
+                border: 3px solid #f3f3f3;
+                border-top: 3px solid #3498db;
+                border-radius: 50%;
+                animation: spin 1s linear infinite;
+                margin-right: 10px;
+            }
+            
+            @keyframes spin {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+            }
+            
+            /* Work item hover effects */
+            .work-item:hover {
+                transform: translateY(-5px);
+                transition: transform 0.3s ease;
+            }
+            
+            .work-item:hover .work-img {
+                transform: scale(1.05);
+                transition: transform 0.3s ease;
+            }
+
+            .work-item {
+            width: 100%;
+            height: 450px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        
+        .work-img-wrapp {
+            width: 100%;
+            height: 340px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .work-img {
+            width: 300px;
+            height: 300px;
+            object-fit: contain;
+        }
+            /* Default: Hide laptop parts, show only full "Create" */
+.only-laptop {
+  display: none;
+}
+
+.only-desktop {
+  display: block;
+}
+
+/* For larger screens: show cre + ate, hide full "Create" */
+@media screen and (min-width: 1024px) {
+  .only-laptop {
+    display: block;
+  }
+
+  .only-desktop {
+    display: none;
+  }
+}
+
+        </style>
+
+    </head>
+
+    <body>
+
+        <div class="cursor-wrapp">
+            <div class="cursor-emmbed w-embed">
+                <style>
+                    .cursor-wrapp {
+                        pointer-events: none;
+                    }
+                </style>
+            </div>
+            <div data-w-id="darkyn-cursor" class="cursor">
+                <div class="project-cursor-text">
+                    View<br />
+                    Work
+                </div>
+            </div>
+        </div>
+
+        <div class="header">
+            <div class="w-layout-blockcontainer main-container w-container">
+                <div id="home" data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="header-inner w-nav">
+                    <a href="index.html" aria-current="page" class="logo w-inline-block w--current" ><img  src="images/logo1.png" alt="" class="logo-img" /></a>
+                    <nav role="navigation" class="main-menu w-nav-menu">
+                        <a href="index.html" aria-current="page" class="menu-item w-nav-link w--current">Home</a>
+                        <a href="about.html" class="menu-item w-nav-link">About</a>
+                        <a href="works.html" class="menu-item w-nav-link">work</a>
+                        <a href="services.html" class="menu-item w-nav-link">services</a>
+                        <a href="contact.html" class="menu-item w-nav-link">contact</a>
+                    </nav>
+                    <div class="menu-button w-nav-button">
+                        <div class="icon w-icon-nav-menu"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-section">
+            <div class="w-layout-blockcontainer main-container w-container">
+                <div class="hero-grid">
+                    <div class="only-desktop">
+                      <h1 data-w-id="darkyn20" style="opacity: 0;" class="hero-big-text">Create</h1>
+                    </div>
+                    <div class="hero-left only-laptop">
+                      <h1 data-w-id="darkyn20" style="opacity: 0;" class="hero-big-text">cre</h1>
+                    </div>
+                    <div id="darkyn18" data-w-id="darkyn19" style="opacity: 0;" class="hero-mid">
+                      <p class="hero-paragraph">We are a creative agency committed to delivering innovative solutions, from concept to execution, ensuring your brand&#x27;s success and growth.</p>
+                      <a href="works.html" class="hero-projects-link w-inline-block">
+                        <div class="hero-projects-link-text">Projects</div>
+                        <img src="images/arrow-right.png" alt="" class="hero-proect-link-arrow" />
+                      </a>
+                      <div class="hero-under-text">
+                        Where ideas evolve <br />into iconic brands
+                      </div>
+                    </div>
+                    <div id="darkyn21" class="hero-right only-laptop">
+                      <h1 data-w-id="darkyn22" style="opacity: 0;" class="hero-big-text">ate</h1>
+                    </div>
+                  </div>
+                  
+                <div class="hero-partners">
+                    <div data-w-id="darkyn23" class="hero-partners-moving" id="logo-container">
+                        <!-- Loading indicator -->
+                        <div class="loading-indicator" style="color: #fff; text-align: center; padding: 20px;">
+                            Loading partner logos...
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="who-we-are-section">
+            <div class="w-layout-blockcontainer main-container w-container">
+                <h2 class="main-title">who we are</h2>
+                <div class="mission-grid">
+                    <div data-w-id="darkyn09" style="opacity: 0;" class="mission-left">
+                        <div class="mission-title">
+                            <img src="images/plus.png"  alt="" class="mission-plus" />
+                            <h4 class="mission-heading">
+                                Our<br />
+                                Mission
+                            </h4>
+                        </div>
+                        <div class="mission-content">
+                            <div class="mission-text-box">
+                                <p class="mission-paragraph">We empower businesses and organizations by transforming ideas into
+                                    iconic, competitive brands. Through innovative design, strategic marketing, and cutting-
+                                    edge digital solutions, we help brands stand out, connect, and thrive in an ever-evolving
+                                    marketplace.</p>
+                                <div class="mission-orange-box"></div>
+                            </div>
+                            <img src="images/logodark.png"  alt="" class="mission-img" />
+                        </div>
+                    </div>
+                    <div data-w-id="darkyn24" style="opacity: 0;" class="mission-right">
+                        <div class="mission-title mission-title-right">
+                            <h4 class="mission-heading mission-heading-right">
+                                Our<br />
+                                vision
+                            </h4>
+                            <img src="images/plus.png"  alt="" class="mission-plus mission-plus-right" />
+                        </div>
+                        <div class="mission-content">
+                            <img src="images/nlogopurple.png"  alt="" class="mission-img mission-img-right" />
+                            <div class="mission-text-box">
+                                <div class="mission-orange-box mission-transparent"></div>
+                                <p class="mission-paragraph mission-paragraph-right">To be a leading creative agency that reshapes the branding landscape, empowering businesses
+                                    and organizations of all sizes to achieve global recognition through impactful design and
+                                    strategy. We envision a world where every brand we touch becomes a symbol of innovation,
+                                    influence, and excellence.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonials-section">
+            <div class="w-layout-blockcontainer main-container w-container">
+                <h2 class="main-title">core values</h2>
+                <div class="testimonials-grid">
+                    <div data-w-id="darkyn07" style="opacity: 0;" class="trstimonials-item">
+                        <div class="testimonial-item-box">
+                            <img src="images/right.png"  alt="" class="testimonials-quote" />
+                            <h4 class="testimonial-heading">Creativity</h4>
+                        </div>
+                        <div class="testimonials-img-txt">
+                            <img src="images/logodark.png"  alt="" class="testimonial-img" />
+                            <p class="testimonials-txt">We push boundaries to craft unique, compelling, and memorable brand
+                                experiences.</p>
+                        </div>
+                    </div>
+                    <div id="w-node-_darkyn29-09557ed5" data-w-id="darkyn29" style="opacity: 0;" class="trstimonials-item">
+                        <div class="testimonial-item-box">
+                            <img src="images/right.png"  alt="" class="testimonials-quote" />
+                            <h4 class="testimonial-heading">Excellence</h4>
+                        </div>
+                        <div class="testimonials-img-txt">
+                            <img src="images/nlogopurple.png"  alt="" class="testimonial-img" />
+                            <p class="testimonials-txt">We uphold the highest standards in every project, delivering quality that speak for itself.</p>
+                        </div>
+                    </div>
+                    <div id="w-node-_darkyn29-09557ed5" data-w-id="darkyn29" style="opacity: 0;" class="trstimonials-item">
+                        <div class="testimonial-item-box">
+                            <img src="images/right.png"  alt="" class="testimonials-quote" />
+                            <h4 class="testimonial-heading">Innovation</h4>
+                        </div>
+                        <div class="testimonials-img-txt">
+                            <img src="images/nlogowhite.png"  alt="" class="testimonial-img" />
+                            <p class="testimonials-txt">We embrace new technologies, trends, and strategies to keep brands ahead of the curve.</p>
+                        </div>
+                    </div>
+                    <div id="w-node-_darkyn29-09557ed5" data-w-id="darkyn29" style="opacity: 0;" class="trstimonials-item">
+                        <div class="testimonial-item-box">
+                            <img src="images/right.png"  alt="" class="testimonials-quote" />
+                            <h4 class="testimonial-heading">Impact</h4>
+                        </div>
+                        <div class="testimonials-img-txt">
+                            <img src="images/logodark.png"  alt="" class="testimonial-img" />
+                            <p class="testimonials-txt">We create designs and strategies that don't just look good but also drive results and inspire action.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="services-section">
+            <div class="w-layout-blockcontainer main-container w-container">
+                <h2 class="main-title">services</h2>
+                <div class="services-wrapp">
+                    <div data-w-id="darkyn10" style="opacity: 0;" class="services-item">
+                        <div class="service-nunmber">01</div>
+                        <div class="service-text">Branding & Identity</div>
+                        <img
+                            src="images/brand.jpg"
+                            
+                            alt=""
+                            class="service-img"
+                        />
+                    </div>
+                    <div data-w-id="darkyn11" style="opacity: 0;" class="services-item">
+                        <div class="service-nunmber">02</div>
+                        <div class="service-text">Graphic Design</div>
+                        <img
+                            src="images/graphic.jpg"
+                            
+                            alt=""
+                            class="service-img"
+                        />
+                    </div>
+                    <div data-w-id="darkyn12" style="opacity: 0;" class="services-item">
+                        <div class="service-nunmber">03</div>
+                        <div class="service-text">Photography & Videography</div>
+                        <img
+                            src="images/photo.jpg"
+                            
+                            alt=""
+                            class="service-img"
+                        />
+                    </div>
+                    <div data-w-id="darkyn13" style="opacity: 0;" class="services-item">
+                        <div class="service-nunmber">04</div>
+                        <div class="service-text">Website Development</div>
+                        <img
+                            src="images/webdev.jpg"
+                            
+                            alt=""
+                            class="service-img"
+                        />
+                    </div>
+                    <div data-w-id="darkyn13" style="opacity: 0;" class="services-item">
+                        <div class="service-nunmber">05</div>
+                        <div class="service-text">Marketing & Advertising</div>
+                        <img
+                            src="images/advert.jpg"
+                            
+                            alt=""
+                            class="service-img"
+                        />
+                    </div>
+                    <div data-w-id="darkyn13" style="opacity: 0;" class="services-item">
+                        <div class="service-nunmber">06</div>
+                        <div class="service-text">Print & Publication</div>
+                        <img
+                            src="images/publicate.jpg"
+                            
+                            alt=""
+                            class="service-img"
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="work-section">
+            <div class="w-layout-blockcontainer main-container w-container">
+
+                <div class="main-title-box">
+                    <h2 class="main-title">work</h2>
+                    <a href="works.html" class="all-projects">All Projects</a>
+                </div>
+
+                <div class="work-wrapper w-dyn-list">
+                    <div role="list" class="work-list w-dyn-items" id="work-list">
+                        <!-- Loading spinner will be displayed here initially -->
+                        <div class="loading-spinner" id="loading-spinner">
+                            <div class="spinner"></div>
+                            <span>Loading our latest works...</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+     
+        <!-- <div class="testimonials-section">
+            <div class="w-layout-blockcontainer main-container w-container">
+                <h2 class="main-title">testimonials</h2>
+                <div class="testimonials-grid">
+                    <div data-w-id="darkyn07" style="opacity: 0;" class="trstimonials-item">
+                        <div class="testimonial-item-box">
+                            <img src="images/quote.png"  alt="" class="testimonials-quote" />
+                            <h4 class="testimonial-heading">Mike Smith</h4>
+                        </div>
+                        <div class="testimonials-img-txt">
+                            <img src="images/testimonials-photo1.png"  alt="" class="testimonial-img" />
+                            <p class="testimonials-txt">Throughout our collaboration, Darkyn&#x27;s dedication to exceptional results was evident. Our portfolio now exceeds expectations, thanks to their expertise.</p>
+                        </div>
+                    </div>
+                    <div id="w-node-_darkyn29-09557ed5" data-w-id="darkyn29" style="opacity: 0;" class="trstimonials-item">
+                        <div class="testimonial-item-box">
+                            <img src="images/quote.png"  alt="" class="testimonials-quote" />
+                            <h4 class="testimonial-heading">William Green</h4>
+                        </div>
+                        <div class="testimonials-img-txt">
+                            <img src="images/testimonials-photo2.png"  alt="" class="testimonial-img" />
+                            <p class="testimonials-txt">Throughout our collaboration, Darkyn&#x27;s dedication to exceptional results was evident. Our portfolio now exceeds expectations, thanks to their expertise.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+       
+
+
+        <div class="footer">
+            <div class="w-layout-blockcontainer main-container w-container">
+                <div class="inner-footer">
+                    <a data-w-id="darkyn02" href="mailto:info@nexauraagency.com" class="mail-link">info@nexauraagency.com</a>
+                    <a data-w-id="darkyn03" href="tel:+4915780769099" class="phone-link">+49 157 8076 9099</a>
+
+                <a data-w-id="darkyn03" href="tel:+233 25 603 4494" class="phone-link">+233 25 603 4494</a>
+
+                    <div data-w-id="darkyn04" class="socials">
+                        <!-- <a href="" target="_blank" class="social-link w-inline-block">
+                            <div class="social-text">X</div>
+                            <img src="images/arrow-down-right.png"  alt="" class="social-arrow" />
+                        </a> -->
+                        <a href="https://www.linkedin.com/company/nexaura-agency" target="_blank" class="social-link w-inline-block">
+                            <div class="social-text">linkedin</div>
+                            <img src="images/arrow-down-right.png"  alt="" class="social-arrow" />
+                        </a>
+                        <!-- <a href="" target="_blank" class="social-link w-inline-block">
+                            <div class="social-text">facebook</div>
+                            <img src="images/arrow-down-right.png"  alt="" class="social-arrow" />
+                        </a> -->
+                        <a href="https://www.instagram.com/nexaura.agency" target="_blank" class="social-link w-inline-block">
+                            <div class="social-text">instagram</div>
+                            <img src="images/arrow-down-right.png"  alt="" class="social-arrow" />
+                        </a>
+                        <!-- <a href="" class="social-link last-social w-inline-block">
+                            <div class="social-text">youtube</div>
+                            <img src="images/arrow-down-right.png"  alt="" class="social-arrow" />
+                        </a> -->
+                    </div>
+                </div>
+                <div class="copyright">
+                    <div data-w-id="darkyn05" class="copyright-text">
+                        Nexaura - © 2025 Made by <a href="#" target="_blank" class="copyright-text">Nexaura Agency</a>
+                    </div>
+                    <div data-w-id="darkyn06" class="right-copyright">
+                        <a href="#home" class="backtotop w-inline-block"><img  src="images/back-top_1back-top.png" alt="" /></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+  
+        <script src="js/jquery.min.js" type="text/javascript"></script>
+        <script src="js/plugins.js" type="text/javascript"></script>
+
+        <script>
+            // API Configuration
+            const API_BASE_URL = 'https://api.nexaura.agency/api/';
+            const API_TOKEN = 'NEXAURA88';
+            
+            // API Headers
+            const headers = {
+                'Authorization': `Bearer ${API_TOKEN}`,
+                'Content-Type': 'application/json'
+            };
+
+            // Function to fetch organizations
+            async function fetchOrganizations() {
+                try {
+                    const response = await fetch(`${API_BASE_URL}get_organisations`, {
+                        method: 'GET',
+                        headers: headers
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+
+                    const organizations = await response.json();
+                    return organizations;
+                } catch (error) {
+                    console.error('Error fetching organizations:', error);
+                    throw error;
+                }
+            }
+
+            // Function to fetch organization details
+            async function fetchOrganizationDetails(orgCode) {
+                try {
+                    const response = await fetch(`${API_BASE_URL}get_organisation_details`, {
+                        method: 'POST',
+                        headers: headers,
+                        body: JSON.stringify({ org_code: orgCode })
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+
+                    const details = await response.json();
+                    return details;
+                } catch (error) {
+                    console.error('Error fetching organization details:', error);
+                    return null;
+                }
+            }
+
+            // Function to create work item HTML
+            function createWorkItemHTML(org, details) {
+                // Use logo from details if available, otherwise use a fallback
+                const logoUrl = details?.logo || 'images/default-work.jpg';
+                
+                return `
+                    <div role="listitem" class="w-dyn-item">
+                        <a
+                            data-w-id="darkyn08"
+                            style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"
+                            href="single-work.html?org_code=${org.org_code}"
+                            class="work-item w-inline-block"
+                            title="View ${org.name} - ${org.service}"
+                        >
+                            <div class="work-img-wrapp">
+                                <img src="${logoUrl}" alt="${org.name}" class="work-img" onerror="this.src='images/default-work.jpg'" />
+                            </div>
+                            <h4 class="heading">${org.name}</h4>
+                        </a>
+                    </div>
+                `;
+            }
+
+            // Function to display error message for works
+            function showWorksError(message) {
+                const workList = document.getElementById('work-list');
+                workList.innerHTML = `
+                    <div style="text-align: center; color: #666; padding: 20px;">
+                        <p>${message}</p>
+                    </div>
+                `;
+            }
+
+            // Function to hide loading spinner
+            function hideLoading() {
+                const loadingSpinner = document.getElementById('loading-spinner');
+                if (loadingSpinner) {
+                    loadingSpinner.remove();
+                }
+            }
+
+            // Main function to load and display first 3 works
+            async function loadLatestWorks() {
+                const workList = document.getElementById('work-list');
+                
+                try {
+                    // Fetch all organizations
+                    const organizations = await fetchOrganizations();
+                    
+                    if (!organizations || organizations.length === 0) {
+                        showWorksError('No works found at the moment.');
+                        return;
+                    }
+
+                    // Hide loading spinner
+                    hideLoading();
+
+                    // Get only first 3 organizations
+                    const firstThreeOrgs = organizations.slice(0, 3);
+
+                    // Create work items HTML
+                    let workItemsHTML = '';
+                    
+                    // Process each organization
+                    for (const org of firstThreeOrgs) {
+                        // Fetch detailed information for each organization
+                        const details = await fetchOrganizationDetails(org.org_code);
+                        workItemsHTML += createWorkItemHTML(org, details);
+                    }
+
+                    // Update the work list
+                    workList.innerHTML = workItemsHTML;
+
+                    // Add animation to work items
+                    const workItems = document.querySelectorAll('.work-item');
+                    workItems.forEach((item, index) => {
+                        item.style.opacity = '0';
+                        item.style.transform = 'translateY(20px)';
+                        
+                        setTimeout(() => {
+                            item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                            item.style.opacity = '1';
+                            item.style.transform = 'translateY(0px)';
+                        }, index * 200);
+                    });
+
+                } catch (error) {
+                    console.error('Error loading works:', error);
+                    showWorksError('Unable to load works. Please try again later.');
+                }
+            }
+
+            // Function to fetch and display logos with proper headers
+            async function loadPartnerLogos() {
+                const logoContainer = document.getElementById('logo-container');
+                const loadingIndicator = logoContainer.querySelector('.loading-indicator');
+                
+                try {
+                    const response = await fetch(`${API_BASE_URL}logo_show`, {
+                        method: 'GET',
+                        headers: headers
+                    });
+                    
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    
+                    const logos = await response.json();
+                    
+                    // Clear loading indicator
+                    logoContainer.innerHTML = '';
+                    
+                    // Check if logos array is not empty
+                    if (logos && logos.length > 0) {
+                        // Create logos twice for seamless scrolling effect
+                        const logosHTML = logos.map(logo => 
+                            `<img src="${logo.logo_url}" width="180.5" alt="Partner Logo" class="hero-client-logo" onerror="this.src='images/default-logo.png'" />`
+                        ).join('');
+                        
+                        // Add logos twice for continuous scrolling
+                        logoContainer.innerHTML = logosHTML + logosHTML;
+                    } else {
+                        // Fallback if no logos are returned
+                        logoContainer.innerHTML = '<div style="color: #fff; text-align: center; padding: 20px;">No partner logos available</div>';
+                    }
+                    
+                } catch (error) {
+                    console.error('Error loading logos:', error);
+                    
+                    // Fallback to original static logos on error
+                    logoContainer.innerHTML = `
+                        <img src="images/logowhite.png" width="180.5" alt="" class="hero-client-logo" />
+                        <img src="images/ambebrown-white.png" width="180.5" alt="" class="hero-client-logo" />
+                        <img src="images/isolp.png" width="180.5" alt="" class="hero-client-logo" />
+                        <img src="images/hfluxlogo.png" width="180.5" alt="" class="hero-client-logo" />
+                        <img src="images/logowhite.png" width="180.5" alt="" class="hero-client-logo" />
+                        <img src="images/ambebrown-white.png" width="180.5" alt="" class="hero-client-logo" />
+                        <img src="images/isolp.png" width="180.5" alt="" class="hero-client-logo" />
+                        <img src="images/hfluxlogo.png" width="180.5" alt="" class="hero-client-logo" />
+                    `;
+                }
+            }
+            
+            // Load content when the page loads
+            document.addEventListener('DOMContentLoaded', function() {
+                loadPartnerLogos();
+                loadLatestWorks();
+            });
+        </script>
+  <script src="https://api.nexaura.agency/track.js"></script>
+
+    </body>
+
+</html>

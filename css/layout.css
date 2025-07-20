@@ -1582,7 +1582,7 @@ textarea.w-select {
 }
 .w-nav:before,
 .w-nav:after {
-  content: " ";
+  /* content: " "; */
   display: table;
   grid-column-start: 1;
   grid-row-start: 1;

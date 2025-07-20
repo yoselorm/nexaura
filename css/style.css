@@ -1326,24 +1326,12 @@ blockquote {
   font-size: 20px;
   font-weight: 300;
   line-height: 20px;
-  background-image: 
-  linear-gradient(to bottom, 
-      transparent 0%, 
-      transparent 30vh, 
-      rgba(0, 0, 0, 0.1) 40vh, 
-      rgba(0, 0, 0, 0.2) 50vh, 
-      rgba(0, 0, 0, 0.4) 60vh, 
-      rgba(0, 0, 0, 0.6) 70vh, 
-      rgba(0, 0, 0, 0.8) 80vh, 
-      rgba(0, 0, 0, 0.9) 90vh, 
-      var(--black) 100vh
-  ),
-  url(../images/heronew.gif);
-background-position: center top;
-background-repeat: no-repeat;
-background-size: cover;
-background-attachment: fixed;
 
+}
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+  }
 }
 
 .cursor-wrapp {

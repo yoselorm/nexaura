@@ -1722,6 +1722,21 @@ blockquote {
   line-height: 40px;
   
 }
+.raw-heading {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 100;
+  line-height: 30px;
+  text-align: center;
+  
+}
+
+.media-scroll-track.no-scroll {
+  animation: none;
+  justify-content: flex-start;
+}
+
 
 .work-category {
   text-transform: uppercase;

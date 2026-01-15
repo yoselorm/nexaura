@@ -24,7 +24,7 @@
             font-size: 16px;
             color: #666;
         }
-        
+
         .spinner {
             width: 40px;
             height: 40px;
@@ -34,12 +34,17 @@
             animation: spin 1s linear infinite;
             margin-right: 10px;
         }
-        
+
         @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
-        
+
         /* Error message styles */
         .error-message {
             text-align: center;
@@ -47,7 +52,7 @@
             padding: 40px;
             font-size: 16px;
         }
-        
+
         .error-message button {
             margin-top: 15px;
             padding: 12px 24px;
@@ -58,7 +63,7 @@
             cursor: pointer;
             font-size: 14px;
         }
-        
+
         .error-message button:hover {
             background: #2980b9;
         }
@@ -75,7 +80,7 @@
             object-fit: contain;
             margin-bottom: 15px;
             border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
         .work-title {
@@ -111,8 +116,13 @@
 
         /* Continuous scroll animation that resets smoothly */
         @keyframes scrollContinuous {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
         }
 
         /* Alternative slower scroll for fewer items */
@@ -121,8 +131,13 @@
         }
 
         @keyframes scrollContinuousSlow {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
         }
 
         .media-item {
@@ -131,7 +146,7 @@
             position: relative;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
             cursor: pointer;
             transition: all 0.3s ease;
             flex-shrink: 0;
@@ -139,7 +154,7 @@
 
         .media-item:hover {
             transform: scale(1.05);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
         }
 
         .media-item img {
@@ -173,7 +188,7 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
             color: white;
             padding: 10px;
             font-size: 12px;
@@ -195,7 +210,7 @@
             top: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0,0,0,0.95);
+            background-color: rgba(0, 0, 0, 0.95);
             animation: fadeIn 0.3s ease;
         }
 
@@ -211,7 +226,7 @@
             max-height: 90%;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
         }
 
         .modal-content img {
@@ -236,7 +251,7 @@
             font-weight: bold;
             cursor: pointer;
             z-index: 1001;
-            background: rgba(0,0,0,0.7);
+            background: rgba(0, 0, 0, 0.7);
             border-radius: 50%;
             width: 50px;
             height: 50px;
@@ -247,7 +262,7 @@
         }
 
         .modal-close:hover {
-            background: rgba(0,0,0,0.9);
+            background: rgba(0, 0, 0, 0.9);
             transform: scale(1.1);
         }
 
@@ -255,7 +270,7 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(0,0,0,0.7);
+            background: rgba(0, 0, 0, 0.7);
             color: white;
             border: none;
             width: 60px;
@@ -271,7 +286,7 @@
         }
 
         .modal-nav:hover {
-            background: rgba(0,0,0,0.9);
+            background: rgba(0, 0, 0, 0.9);
             transform: translateY(-50%) scale(1.1);
         }
 
@@ -289,7 +304,7 @@
         }
 
         .modal-nav:disabled:hover {
-            background: rgba(0,0,0,0.7);
+            background: rgba(0, 0, 0, 0.7);
             transform: translateY(-50%) scale(1);
         }
 
@@ -299,7 +314,7 @@
             left: 50%;
             transform: translateX(-50%);
             color: white;
-            background: rgba(0,0,0,0.7);
+            background: rgba(0, 0, 0, 0.7);
             padding: 8px 16px;
             border-radius: 20px;
             font-size: 14px;
@@ -307,8 +322,13 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
         /* Responsive design */
@@ -317,26 +337,26 @@
                 width: 40px;
                 height: 40px;
             }
-            
+
             .work-title {
                 font-size: 22px;
             }
-            
+
             .modal-content iframe {
                 width: 95vw;
                 height: 70vh;
             }
-            
+
             .modal-nav {
                 width: 50px;
                 height: 50px;
                 font-size: 20px;
             }
-            
+
             .modal-nav.prev {
                 left: 15px;
             }
-            
+
             .modal-nav.next {
                 right: 15px;
             }
@@ -363,8 +383,10 @@
 
     <div class="header">
         <div class="w-layout-blockcontainer main-container w-container">
-            <div id="home" data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="header-inner w-nav">
-                <a href="index.html" class="logo w-inline-block"><img src="images/logo1.png" alt="" class="logo-img" /></a>
+            <div id="home" data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease"
+                data-easing2="ease" role="banner" class="header-inner w-nav">
+                <a href="index.html" class="logo w-inline-block"><img src="images/logo1.png" alt=""
+                        class="logo-img" /></a>
                 <nav role="navigation" class="main-menu w-nav-menu">
                     <a href="index.html" class="menu-item w-nav-link">Home</a>
                     <a href="about.html" class="menu-item w-nav-link">About</a>
@@ -419,13 +441,15 @@
                 <a data-w-id="darkyn03" href="tel:+233 25 603 4494" class="phone-link">+233 25 603 4494</a>
 
                 <div data-w-id="darkyn04" class="socials">
-                    <a href="https://www.linkedin.com/company/nexaura-agency" target="_blank" class="social-link w-inline-block">
+                    <a href="https://www.linkedin.com/company/nexaura-agency" target="_blank"
+                        class="social-link w-inline-block">
                         <div class="social-text">linkedin</div>
-                        <img src="images/arrow-down-right.png"  alt="" class="social-arrow" />
+                        <img src="images/arrow-down-right.png" alt="" class="social-arrow" />
                     </a>
-                    <a href="https://www.instagram.com/nexaura.agency" target="_blank" class="social-link w-inline-block">
+                    <a href="https://www.instagram.com/nexaura.agency" target="_blank"
+                        class="social-link w-inline-block">
                         <div class="social-text">instagram</div>
-                        <img src="images/arrow-down-right.png"  alt="" class="social-arrow" />
+                        <img src="images/arrow-down-right.png" alt="" class="social-arrow" />
                     </a>
                 </div>
             </div>
@@ -434,7 +458,8 @@
                     Nexaura - © 2025 Made by <a href="#" target="_blank" class="copyright-text">Nexaura Agency</a>
                 </div>
                 <div data-w-id="darkyn06" class="right-copyright">
-                    <a href="#home" class="backtotop w-inline-block"><img src="images/back-top_1back-top.png" alt="" /></a>
+                    <a href="#home" class="backtotop w-inline-block"><img src="images/back-top_1back-top.png"
+                            alt="" /></a>
                 </div>
             </div>
         </div>
@@ -445,9 +470,9 @@
 
     <script>
         // API Configuration
-        const API_BASE_URL = 'https://api.nexaura.agency/api/';
+        const API_BASE_URL = 'https://nexaura-control.onrender.com/api/organisations';
         const API_TOKEN = 'NEXAURA88';
-        
+
         // API Headers
         const headers = {
             'Authorization': `Bearer ${API_TOKEN}`,
@@ -465,27 +490,85 @@
         }
 
         // Function to fetch organization details
+
         async function fetchOrganizationDetails(orgCode) {
             try {
-                const response = await fetch(`${API_BASE_URL}get_organisation_details`, {
-                    method: 'POST',
-                    headers: headers,
-                    body: JSON.stringify({ org_code: orgCode })
-                });
+                const response = await fetch(`${API_BASE_URL}/${orgCode}`);
 
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
 
-                const details = await response.json();
-                return details;
+                const result = await response.json();
+
+                if (!result.success) {
+                    throw new Error(result.message || 'Organisation not found');
+                }
+
+                return result.data;
             } catch (error) {
-                console.error('Error fetching organization details:', error);
+                console.error('Error fetching organisation:', error);
                 throw error;
             }
         }
 
+
         // Function to create scrolling media gallery HTML - NO DUPLICATES
+    //     function createScrollingMediaHTML(media) {
+    //     if (!media || media.length === 0) {
+    //         return '<div style="text-align: center; padding: 40px; color: #666;">No media available for this project</div>';
+    //     }
+
+    //     currentMediaArray = media;
+
+    //     const mediaItems = media.map((item, index) => {
+    //         if (item.mediaType === 'Picture') {
+    //             return `
+    //             <div class="media-item" onclick="openModal(${index})" data-index="${index}">
+    //                 <img src="${item.url}" alt="Project media" onerror="this.src='images/default-work.jpg'">
+    //                 <div class="media-overlay">
+    //                     <div>Click to view</div>
+    //                 </div>
+    //             </div>
+    //         `;
+    //         } else if (item.mediaType === 'Document') {
+    //             return `
+    //             <div class="media-item document" onclick="openModal(${index})" data-index="${index}">
+    //                 <div class="document-icon">📄</div>
+    //                 <div class="document-label">Document</div>
+    //                 <div class="media-overlay">
+    //                     <div>Click to view</div>
+    //                 </div>
+    //             </div>
+    //         `;
+    //         }
+    //     }).join('');
+
+    //     const tempContainer = document.createElement('div');
+    //     tempContainer.style.display = 'flex';
+    //     tempContainer.style.position = 'absolute';
+    //     tempContainer.style.visibility = 'hidden';
+    //     tempContainer.innerHTML = mediaItems;
+    //     document.body.appendChild(tempContainer);
+
+    //     const totalItemsWidth = Array.from(tempContainer.children).reduce(
+    //         (acc, el) => acc + el.offsetWidth + 20, 0
+    //     );
+
+    //     const containerWidth = window.innerWidth;
+    //     document.body.removeChild(tempContainer);
+
+    //     const trackClass = totalItemsWidth > containerWidth ? 'media-scroll-track' : 'media-scroll-track no-scroll';
+
+    //     return `
+    //     <div class="media-scroll-container">
+    //         <div class="${trackClass}">
+    //             ${mediaItems}
+    //         </div>
+    //     </div>
+    // `;
+    //     }
+
         function createScrollingMediaHTML(media) {
             if (!media || media.length === 0) {
                 return '<div style="text-align: center; padding: 40px; color: #666;">No media available for this project</div>';
@@ -496,47 +579,42 @@
 
             // Create media items WITHOUT duplication
             const mediaItems = media.map((item, index) => {
-                if (item.media_type === 'Picture') {
+                if (item.mediaType === 'Picture') {
                     return `
-                        <div class="media-item" onclick="openModal(${index})" data-index="${index}">
-                            <img src="${item.url}" alt="Project media" onerror="this.src='images/default-work.jpg'">
-                            <div class="media-overlay">
-                                <div>Click to view</div>
-                            </div>
-                        </div>
-                    `;
-                } else if (item.media_type === 'Document') {
-                    return `
-                        <div class="media-item document" onclick="openModal(${index})" data-index="${index}">
-                            <div class="document-icon">📄</div>
-                            <div class="document-label">Document</div>
-                            <div class="media-overlay">
-                                <div>Click to view</div>
-                            </div>
-                        </div>
-                    `;
-                }
-            }).join('');
-
-            // Add slower animation class for fewer items
-            const trackClass = media.length <= 3 ? 'media-scroll-track slow' : 'media-scroll-track';
-
-            return `
-                <div class="media-scroll-container">
-                    <div class="${trackClass}">
-                        ${mediaItems}
+                <div class="media-item" onclick="openModal(${index})" data-index="${index}">
+                    <img src="${item.url}" alt="Project media" onerror="this.src='images/default-work.jpg'">
+                    <div class="media-overlay">
+                        <div>Click to view</div>
                     </div>
                 </div>
             `;
+                } else if (item.mediaType === 'Document') {
+                    return `
+                <div class="media-item document" onclick="openModal(${index})" data-index="${index}">
+                    <div class="document-icon">📄</div>
+                    <div class="document-label">Document</div>
+                    <div class="media-overlay">
+                        <div>Click to view</div>
+                    </div>
+                </div>
+            `;
+                }
+            }).join('');
+
+            return `
+        <div class="media-scroll-container" style="overflow-x: auto; display: flex; gap: 20px; flex-wrap: wrap;">
+            ${mediaItems}
+        </div>
+    `;
         }
 
         // Function to get longest service word length
         function getLongestServiceWidth(services) {
             if (!services || services.length === 0) return 'auto';
-            
+
             const serviceNames = services.map(s => s.service || '');
             const longestService = serviceNames.reduce((a, b) => a.length > b.length ? a : b, '');
-            
+
             // Estimate width based on character count (approximate) - increased width
             const estimatedWidth = Math.max(longestService.length * 12, 250);
             return `${estimatedWidth}px`;
@@ -545,12 +623,12 @@
         // Function to create work details HTML
         function createWorkDetailsHTML(details) {
             const logoUrl = details.logo || 'images/default-work.jpg';
-            const websiteUrl = details.link_url || '#';
+            const websiteUrl = details.linkUrl || '#';
             const description = details.description || 'No description available';
             const services = details.services ? details.services.map(s => s.service).join('<br>') : 'General Service';
             const year = details.year || new Date().getFullYear();
             const serviceWidth = getLongestServiceWidth(details.services);
-            
+
             return `
                 <div class="work-header">
                     <img src="${logoUrl}" alt="${details.name}" class="work-logo" onerror="this.src='images/default-work.jpg'">
@@ -612,18 +690,18 @@
         // Function to open modal with navigation
         function openModal(index) {
             if (!currentMediaArray || currentMediaArray.length === 0) return;
-            
+
             currentMediaIndex = index;
             const modal = document.getElementById('media-modal');
             const modalContent = document.getElementById('modal-content');
             const modalCounter = document.getElementById('modal-counter');
             const prevBtn = document.getElementById('modal-prev');
             const nextBtn = document.getElementById('modal-next');
-            
+
             updateModalContent();
             updateModalCounter();
             updateNavigationButtons();
-            
+
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
         }
@@ -632,10 +710,10 @@
         function updateModalContent() {
             const modalContent = document.getElementById('modal-content');
             const currentMedia = currentMediaArray[currentMediaIndex];
-            
-            if (currentMedia.media_type === 'Picture') {
+
+            if (currentMedia.mediaType === 'Picture') {
                 modalContent.innerHTML = `<img src="${currentMedia.url}" alt="Project media">`;
-            } else if (currentMedia.media_type === 'Document') {
+            } else if (currentMedia.mediaType === 'Document') {
                 modalContent.innerHTML = `<iframe src="${currentMedia.url}" type="application/pdf"></iframe>`;
             }
         }
@@ -650,10 +728,10 @@
         function updateNavigationButtons() {
             const prevBtn = document.getElementById('modal-prev');
             const nextBtn = document.getElementById('modal-next');
-            
+
             prevBtn.disabled = currentMediaIndex === 0;
             nextBtn.disabled = currentMediaIndex === currentMediaArray.length - 1;
-            
+
             // Hide buttons if only one media item
             if (currentMediaArray.length <= 1) {
                 prevBtn.style.display = 'none';
@@ -715,85 +793,85 @@
         // Main function to load and display work details
         async function loadWorkDetails() {
             const container = document.getElementById('work-details-container');
-            
+
             // Show loading spinner
             container.innerHTML = `
-                <div class="loading-spinner" id="loading-spinner">
-                    <div class="spinner"></div>
-                    <span>Loading work details...</span>
-                </div>
-            `;
+        <div class="loading-spinner" id="loading-spinner">
+            <div class="spinner"></div>
+            <span>Loading work details...</span>
+        </div>
+    `;
 
-            // Get organization code from URL
+            // Get org_code from URL
             const orgCode = getUrlParameter('org_code');
-            
+
             if (!orgCode) {
                 showError('No organization code provided. Please select a work from the works page.');
                 return;
             }
 
             try {
-                // Fetch organization details
+                // Fetch details
                 const details = await fetchOrganizationDetails(orgCode);
-                
+
                 if (!details) {
                     showError('Organization details not found. The work may no longer exist.');
                     return;
                 }
 
-                // Hide loading spinner
+                // Hide spinner
                 hideLoading();
 
-                // Create and display work details
+                // Render work details
                 const workDetailsHTML = createWorkDetailsHTML(details);
                 container.innerHTML = workDetailsHTML;
 
                 // Update page title
                 document.title = `Nexaura - ${details.name}`;
 
-                // Add animation to the content
+                // Animation
                 const workContent = container.querySelector('div');
                 if (workContent) {
                     workContent.style.opacity = '0';
                     workContent.style.transform = 'translateY(20px)';
-                    
+
                     setTimeout(() => {
                         workContent.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
                         workContent.style.opacity = '1';
                         workContent.style.transform = 'translateY(0px)';
                     }, 100);
                 }
-
             } catch (error) {
                 console.error('Error loading work details:', error);
                 showError('Unable to load work details. Please try again or contact support.');
             }
         }
 
+
         // Event listeners
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Load work details
             loadWorkDetails();
-            
+
             // Modal close button
             document.querySelector('.modal-close').addEventListener('click', closeModal);
-            
+
             // Modal navigation buttons
             document.getElementById('modal-prev').addEventListener('click', navigatePrevious);
             document.getElementById('modal-next').addEventListener('click', navigateNext);
-            
+
             // Close modal when clicking outside
-            document.getElementById('media-modal').addEventListener('click', function(e) {
+            document.getElementById('media-modal').addEventListener('click', function (e) {
                 if (e.target === this) {
                     closeModal();
                 }
             });
-            
+
             // Keyboard navigation
-            document.addEventListener('keydown', function(e) {
+            document.addEventListener('keydown', function (e) {
                 const modal = document.getElementById('media-modal');
                 if (modal.classList.contains('active')) {
-                    switch(e.key) {
+                    switch (e.key) {
                         case 'Escape':
                             closeModal();
                             break;

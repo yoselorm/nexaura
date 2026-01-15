@@ -440,35 +440,29 @@
 
         <script>
             // API Configuration
-            const API_BASE_URL = 'https://api.nexaura.agency/api/';
-            const API_TOKEN = 'NEXAURA88';
-            
-            // API Headers
-            const headers = {
-                'Authorization': `Bearer ${API_TOKEN}`,
-                'Content-Type': 'application/json'
-            };
+            const API_BASE_URL = 'https://nexaura-control.onrender.com/api';
 
-            // Function to fetch organizations
-            async function fetchOrganizations() {
-                try {
-                    const response = await fetch(`${API_BASE_URL}get_organisations`, {
-                        method: 'GET',
-                        headers: headers
-                    });
+// Function to fetch organisations from MERN backend
+async function fetchOrganisations() {
+    try {
+        const response = await fetch(`${API_BASE_URL}/organisations?status=Active`);
 
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
 
-                    const organizations = await response.json();
-                    return organizations;
-                } catch (error) {
-                    console.error('Error fetching organizations:', error);
-                    throw error;
-                }
-            }
+        const result = await response.json();
 
+        if (!result.success) {
+            throw new Error(result.message || 'Failed to fetch organisations');
+        }
+
+        return result.data;
+    } catch (error) {
+        console.error('Error fetching organisations:', error);
+        throw error;
+    }
+}
             // Function to fetch organization details
             async function fetchOrganizationDetails(orgCode) {
                 try {
@@ -491,27 +485,60 @@
             }
 
             // Function to create work item HTML
-            function createWorkItemHTML(org, details) {
-                // Use logo from details if available, otherwise use a fallback
-                const logoUrl = details?.logo || 'images/default-work.jpg';
-                
-                return `
-                    <div role="listitem" class="w-dyn-item">
-                        <a
-                            data-w-id="darkyn08"
-                            style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"
-                            href="single-work.html?org_code=${org.org_code}"
-                            class="work-item w-inline-block"
-                            title="View ${org.name} - ${org.service}"
-                        >
-                            <div class="work-img-wrapp">
-                                <img src="${logoUrl}" alt="${org.name}" class="work-img" onerror="this.src='images/default-work.jpg'" />
-                            </div>
-                            <h4 class="heading">${org.name}</h4>
-                        </a>
-                    </div>
-                `;
-            }
+            function createWorkItemHTML(org) {
+            // Use logo (base64) or fallback to default
+            const logoUrl = org.logo || 'images/default-work.jpg';
+
+            // Format services array
+            const servicesText = org.services && org.services.length > 0
+                ? org.services.map(item => item.service).join(', ')
+                : 'Creative Services';
+
+            return `
+                <div role="listitem" class="w-dyn-item">
+  <a
+    data-w-id="darkyn08"
+    href="single-work.html?org_code=${org.orgCode}"
+    title="View ${org.name} - ${servicesText}"
+    class="work-item w-inline-block"
+    style="
+      opacity: 1;
+      transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1);
+      transform-style: preserve-3d;
+
+      /* 🔥 glass card styling */
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      padding: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    "
+  >
+    <div class="work-img-wrapp">
+      <img
+        src="${logoUrl}"
+        alt="${org.name}"
+        class="work-img"
+        onerror="this.src='images/default-work.jpg'"
+        style="border-radius: 12px;"
+      />
+    </div>
+
+    <h5
+      class="raw-heading"
+      
+      title="${org.name}"
+    >
+      ${org.name}
+    </h5>
+  </a>
+</div>
+
+            `;
+        }
 
             // Function to display error message for works
             function showWorksError(message) {
@@ -537,7 +564,7 @@
                 
                 try {
                     // Fetch all organizations
-                    const organizations = await fetchOrganizations();
+                    const organizations = await fetchOrganisations();
                     
                     if (!organizations || organizations.length === 0) {
                         showWorksError('No works found at the moment.');

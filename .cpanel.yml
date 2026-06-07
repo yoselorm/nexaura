@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/nexauraagency/public_html/nexaura.agency/
+    - /bin/cp -R * $DEPLOYPATH
